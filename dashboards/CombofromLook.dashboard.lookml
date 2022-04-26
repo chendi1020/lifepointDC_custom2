@@ -185,3 +185,37 @@
     totals_color: "#808080"
     defaults_version: 1
     series_types: {}
+  - name: facilityLocation
+    title: Facility Location
+    model: dclifepoint2
+    explore: lp_demo
+    type: looker_map
+    fields: [lp_demo.facility_location, lp_demo.facility_dup, lp_demo.facility, lp_demo.percent_unplanned_readmit]
+    filters:
+      lp_demo.measure_param: readmit^_rate
+    sorts: [lp_demo.percent_unplanned_readmit desc]
+    limit: 500
+    column_limit: 50
+    map_plot_mode: points
+    heatmap_gridlines: false
+    heatmap_gridlines_empty: false
+    heatmap_opacity: 0.5
+    show_region_field: true
+    draw_map_labels_above_data: true
+    map_tile_provider: light
+    map_position: fit_data
+    map_scale_indicator: 'off'
+    map_pannable: true
+    map_zoomable: true
+    map_marker_type: icon
+    map_marker_icon_name: default
+    map_marker_radius_mode: proportional_value
+    map_marker_units: meters
+    map_marker_proportional_scale_type: linear
+    map_marker_color_mode: value
+    show_view_names: false
+    show_legend: true
+    quantize_map_value_colors: false
+    reverse_map_value_colors: false
+    defaults_version: 1
+    hidden_fields: [lp_demo.facility_dup]
